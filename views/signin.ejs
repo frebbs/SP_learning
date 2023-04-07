@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <%- include('./nav/_navbar')%>
+
+    <div class="container d-flex flex-column position-absolute top-50 start-50 translate-middle">
+        <div class="row pt-5">
+            <div class="col-6 align-self-center">
+                <form class="mt-5" method="post" action="/login">
+                    <h4 class="mb-5">Login</h4>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" id="password">
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6">
+                    <form class="mt-5" method="post" action="/signup">
+                        <h4 class="mb-5">Register</h4>
+                        <div class="row">
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="fname" class="form-label">First Name</label>
+                                    <input type="text" name="fname" class="form-control" id="fname">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="mb-3">
+                                    <label for="lname" class="form-label">Last Name</label>
+                                    <input type="text" name="lname" class="form-control" id="lname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" id="username">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="password">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Confirm Password</label>
+                            <input type="password" name="password2" class="form-control" id="password2">
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" name="newsletter" type="checkbox" id="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    Receive Newsletter
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
+                        </div>
+                    </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/js/bootstrap.js"></script>
+</body>
+</html>

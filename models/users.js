@@ -14,6 +14,18 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    firstName: {
+        type: String,
+        required: true
+    },
+    lastName: {
+        type: String,
+        required: true
+    },
+    newsletter: {
+        type: Boolean,
+        default: false
+    },
     date: {
         type: Date,
         default: Date.now
