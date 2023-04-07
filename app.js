@@ -4,9 +4,12 @@ const PORT = 8080;
 require('./utils/mongoose');
 const rootRouter = require('./routes/root');
 
+app.set('view engine', 'ejs');
+
 app.use([
     express.urlencoded({ extended: true }),
-    express.json()
+    express.json(),
+    express.static('public')
 ])
 
 app.use('/', rootRouter);
