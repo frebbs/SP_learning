@@ -12,7 +12,7 @@ async function seedDatabase() {
     try {
         await client.connect();
 
-        const database = client.db('app2');
+        const database = client.db('sp_learning');
         const collectionName = 'users';
 
         if (await collectionExists(database, collectionName)) {

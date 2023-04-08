@@ -6,7 +6,7 @@
   "scripts": {
     "dev:frontend": "browser-sync start --proxy \"localhost:8080\" --files \"public\" \"views\"",
     "dev:server": "nodemon app.js",
-    "build:css": "sass src/scss/main.scss public/css/main.css --watch",
+    "dev:sass": "sass src/scss/main.scss public/css/main.css --watch",
     "build:docker": "docker build . -t frebby/app2"
   },
   "keywords": [],

@@ -38,7 +38,18 @@ router.post('/login', async(req, res) => {
 router.post('/signup', async(req, res) => {
     const { fname, lname, username, email, password, password2, newsletter } = req.body;
 
-    const newUser = new User({
+    if(password !== password2) {
+        return res.json({
+            error: 'Passwords do not match'
+        })
+    }
+
+    let getNewsletter = false;
+    if(newsletter === 'on') {
+        getNewsletter = true;
+    }
+
+    const newUser = User({
         username,
         email,
         password,
@@ -47,8 +58,20 @@ router.post('/signup', async(req, res) => {
         newsletter
     });
 
-    console.log(newUser);
-    res.redirect('/');
+    console.log('newUser');
+
+    await newUser.save()
+        .then((data) => {
+            console.log(data);
+            res.redirect('/');
+        })
+        .catch(err => {
+            console.log(err);
+            res.json({
+                error: err
+            });
+        });
+
 });
 
 module.exports = router;
