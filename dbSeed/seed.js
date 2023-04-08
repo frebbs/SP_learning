@@ -4,6 +4,8 @@ const fs = require('fs');
 const uri = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017';
 const client = new MongoClient(uri);
 
+// Not used in this example, but you can use this to seed the database when the code is created for this variable to be true or false.
+// const seedDatabase = true;
 async function collectionExists(db, collectionName) {
     const collections = await db.listCollections().toArray();
     return collections.some((coll) => coll.name === collectionName);
