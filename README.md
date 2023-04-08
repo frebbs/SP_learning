@@ -74,7 +74,7 @@ If you wish to run the application in docker make sure your in the root director
 npm run build:docker
 ```
 
-This will build the application and run it in a docker container. You can then access the application by going to [http://localhost:3000](http://localhost:3000).
+This will build the application and run it in a docker container. You can then access the application by going to [http://localhost:8081](http://localhost:8081).
 
 It will set up a MongoDB database in a docker container as well as seed the database with some data. Each time the application is run it will seed the database with the same data and remove any previous data in the database so the application is in a consistent state.
 
