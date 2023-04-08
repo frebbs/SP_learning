@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-
+const bcrypt = require('bcrypt');
+const SALT = 10;
 const User = require('../models/users');
 
 router.get('/', async(req, res) => {
@@ -31,7 +32,26 @@ router.post('/save/user', async(req, res) => {
 
 router.post('/login', async(req, res) => {
     const { email, password } = req.body;
-    console.log(email, password);
+
+    let user = await User.findOne({ email })
+
+
+    if(!user) {
+        return res.json({
+            error: 'User not found'
+        })
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if(!isMatch) {
+        return res.json({
+            error: 'Password is incorrect'
+        })
+    }
+
+    console.log('User logged in');
+
     res.redirect('/');
 });
 
@@ -49,17 +69,17 @@ router.post('/signup', async(req, res) => {
         getNewsletter = true;
     }
 
+    const hashedPassword = await bcrypt.hash(password, SALT);
+
     const newUser = User({
         username,
         email,
-        password,
+        password: hashedPassword,
         firstName: fname,
         lastName: lname,
         newsletter
     });
-
-    console.log('newUser');
-
+    
     await newUser.save()
         .then((data) => {
             console.log(data);
