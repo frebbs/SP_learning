@@ -15,6 +15,8 @@ The technologies I am using are:
 * [bcrypt](https://www.npmjs.com/package/bcrypt) - The password hashing library used
 * [npm](https://www.npmjs.com/) - The package manager used
 * [browser-sync](https://www.browsersync.io/) - The live reload tool used
+* [Intellij](https://www.jetbrains.com/idea/) - The IDE used
+* [DataGrip](https://www.jetbrains.com/datagrip/) - The database IDE used
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
