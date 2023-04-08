@@ -6,13 +6,14 @@
   "scripts": {
     "dev:frontend": "browser-sync start --proxy \"localhost:8080\" --files \"public\" \"views\"",
     "dev:server": "nodemon app.js",
-    "build:css": "sass src/scss/main.scss public/css/main.css --watch",
+    "dev:sass": "sass src/scss/main.scss public/css/main.css --watch",
     "build:docker": "docker build . -t frebby/app2"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "bootstrap": "^5.2.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
