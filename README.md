@@ -5,7 +5,7 @@ This application will be using all the technologies I intend to use in the longe
 
 The technologies I am using are:
 * [Node.js](https://nodejs.org/en/) - The asynchronous event-driven JavaScript runtime
-* [Express](http://expressjs.com/) - The web framework used
+* [Express](http://expressjs.com/) - The API framework used
 * [MongoDB](https://www.mongodb.com/) - The database used
 * [Mongoose](http://mongoosejs.com/) - The database wrapper used
 * [ejs](http://ejs.co/) - The templating engine used
