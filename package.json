@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:server\" \"npm run dev:sass\"",
     "dev:frontend": "browser-sync start --proxy \"localhost:8080\" --files \"public\" \"views\"",
     "dev:server": "nodemon app.js",
     "dev:sass": "sass src/scss/main.scss public/css/main.css --watch",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.29.1",
+    "concurrently": "^8.0.1",
     "nodemon": "^2.0.22",
     "sass": "^1.60.0"
   }
