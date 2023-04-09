@@ -10769,5 +10769,14 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.container.slide-in {
+  position: relative;
+  right: -100%;
+  transition: right 0.5s ease-in-out;
+}
+
+.container.slide-in.active {
+  right: 0;
+}
 
 /*# sourceMappingURL=main.css.map */
